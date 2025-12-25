@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ff0000;
+}
+
+header {
+
+}
+
+main {
+  max-width: 68vw;
+}
+
+
+footer {
+  color: black;
+  font-size: 0.8rem;
+}
