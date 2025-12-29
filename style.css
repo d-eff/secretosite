@@ -9,7 +9,14 @@ body {
 }
 
 header {
+  
+}
 
+menu {
+  display: flex;
+  li {
+    list-style: none;
+  }
 }
 
 main {
@@ -18,6 +25,9 @@ main {
 
 
 footer {
+  bottom: 5px;
   color: black;
   font-size: 0.8rem;
+  left: calc(50vw - 150px);
+  position: absolute;
 }
