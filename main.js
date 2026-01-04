@@ -1,7 +1,7 @@
-function drawEllipse(ctx, posX, posY) {
+function drawEllipse(ctx, posX, posY, width, height) {
   ctx.beginPath();
   //x, y, radiusX, radiusY, rotation, startAngle, endAngle, counterclockwise
-  ctx.ellipse(posX, posY, 50, 75, Math.PI/2, 0, 2 * Math.PI);
+  ctx.ellipse(posX, posY, height, width, Math.PI/2, 0, 2 * Math.PI);
   ctx.fillStyle = "white";
   ctx.fill();
   ctx.stroke();
@@ -57,7 +57,7 @@ function getPupilPos(clientXpos, clientYpos, ellipseXPos, ellipseYPos, ellipseXL
 function drawEye(ctx, e, ellipseXPos, ellipseYPos, ellipseXLength, ellipseYLength) {
   const {x, y} = getPupilPos(e.clientX, e.clientY, ellipseXPos, ellipseYPos, ellipseXLength, ellipseYLength);
   ctx.clearRect(ellipseXPos - (25 + ellipseXLength), ellipseYPos - (25 + ellipseYLength), ellipseXPos + ellipseXLength, ellipseYPos + ellipseYLength);
-  drawEllipse(ctx, ellipseXPos, ellipseYPos);
+  drawEllipse(ctx, ellipseXPos, ellipseYPos, ellipseXLength, ellipseYLength);
   drawCircle(ctx, x, y)
 }
 
@@ -69,8 +69,8 @@ function main() {
   let rect = canvas.getBoundingClientRect();
   let ctx = canvas.getContext('2d');
 
-  drawEllipse(ctx, 300, 300);
-  drawEllipse(ctx, 500, 300);
+  drawEllipse(ctx, 300, 300, 75, 50);
+  drawEllipse(ctx, 500, 300, 75, 50);
 
   drawCircle(ctx, 300, 300);
   drawCircle(ctx, 500, 300);
