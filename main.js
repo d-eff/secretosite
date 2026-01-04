@@ -69,17 +69,25 @@ function main() {
   let rect = canvas.getBoundingClientRect();
   let ctx = canvas.getContext('2d');
 
-  drawEllipse(ctx, 300, 300, 75, 50);
-  drawEllipse(ctx, 500, 300, 75, 50);
+  const secretoHead = document.getElementById("secretoHead");
 
-  drawCircle(ctx, 300, 300);
-  drawCircle(ctx, 500, 300);
+  // drawEllipse(ctx, 300, 300, 75, 50);
+  // drawEllipse(ctx, 500, 300, 75, 50);
+  // drawEllipse(ctx, 291, 370, 33.5, 20.5);
+  // drawEllipse(ctx, 466, 372, 36.5, 22);
+  ctx.drawImage(secretoHead, 0, 0)
+
+  // drawCircle(ctx, 300, 300);
+  // drawCircle(ctx, 500, 300);
   
   canvas.addEventListener('mousemove', (e) => {
-    //left - 291, 370, 33.5, 20.5
-    // right - 466, 372, 36.5, 22
-    drawEye(ctx, e, 300, 300, 75, 50)
-    drawEye(ctx, e, 500, 300, 75, 50)
+    //left - 
+    drawEye(ctx, e, 326, 410, 33.5, 20.5);
+    drawEye(ctx, e, 500, 409, 36.5, 22);
+    ctx.drawImage(secretoHead, 0, 0);
+    // right - 
+    // drawEye(ctx, e, 300, 300, 75, 50)
+    // drawEye(ctx, e, 500, 300, 75, 50)
   });
 
   window.addEventListener('resize', () => {

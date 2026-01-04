@@ -12,6 +12,10 @@ header {
   
 }
 
+#secretoHead {
+  visibility: hidden;
+}
+
 menu {
   display: flex;
   li {
