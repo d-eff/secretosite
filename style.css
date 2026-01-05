@@ -13,7 +13,7 @@ header {
 }
 
 #secretoHead {
-  visibility: hidden;
+  display: none;
 }
 
 menu {

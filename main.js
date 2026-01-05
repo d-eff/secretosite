@@ -26,38 +26,43 @@ function clamp(val, min, max) {
   return Math.min(Math.max(val, min), max);
 }
 
-function getPupilPos(clientXpos, clientYpos, ellipseXPos, ellipseYPos, ellipseXLength, ellipseYLength) {
-  const clientX = clientXpos - ellipseXPos;
-  const clientY = clientYpos - ellipseYPos;
+function getPupilPos(clientXpos, clientYpos, xPos, yPos, xRadius, yRadius) {
+  const clientX = clientXpos - xPos;
+  const clientY = clientYpos - yPos;
   const angle = Math.atan(clientX/clientY);
-  const xAng = ellipseXLength * Math.sin(angle);
-  const yAng = ellipseYLength * Math.cos(angle);
-  let x = ellipseXPos;
-  let y = ellipseYPos;
+  const xAng = xRadius * Math.sin(angle);
+  const yAng = yRadius * Math.cos(angle);
+  let x = xPos;
+  let y = yPos;
+  // if ((clientX > xRadius && clientX <= 2 * xRadius) && (clientY > -yRadius && clientY < yRadius)) {
+    //CROSS-EYED PREVENTION
+    // x = xPos;
+    // y = yPos;
   if(clientX >= 0 && clientY >= 0) {
-    //BOTTOM RIGHT
-    x = clamp(clientX, 0, xAng) + ellipseXPos;
-    y = clamp(clientY, 0, yAng) + ellipseYPos;
+    //BOTTOM RIGHT (+,+)
+    x = clamp(clientX, 0, xAng) + xPos;
+    y = clamp(clientY, 0, yAng) + yPos;
   } else if (clientX < 0 && clientY >= 0) {
-    //BOTTOM LEFT
-    x = clamp(clientX, xAng, 0) + ellipseXPos;
-    y = clamp(clientY, 0, yAng) + ellipseYPos;
+    //BOTTOM LEFT (-,+)
+    x = clamp(clientX, xAng, 0) + xPos;
+    y = clamp(clientY, 0, yAng) + yPos;
   } else if(clientX >= 0 && clientY < 0) {
-    //TOP RIGHT
-    x = clamp(clientX, 0, -xAng) + ellipseXPos;
-    y = clamp(clientY, -yAng, 0) + ellipseYPos;
+    //TOP RIGHT (+,-)
+    x = clamp(clientX, 0, -xAng) + xPos;
+    y = clamp(clientY, -yAng, 0) + yPos;
   } else if(clientX < 0 && clientY < 0) {
-    //TOP LEFT
-    x = clamp(clientX, -xAng, 0) + ellipseXPos;
-    y = clamp(clientY, -yAng, 0) + ellipseYPos;
+    //TOP LEFT (-,-)
+    x = clamp(clientX, -xAng, 0) + xPos;
+    y = clamp(clientY, -yAng, 0) + yPos;
   }
+  console.log(clientX, clientY, x, y)
   return {x, y};
 }
 
-function drawEye(ctx, e, ellipseXPos, ellipseYPos, ellipseXLength, ellipseYLength) {
-  const {x, y} = getPupilPos(e.clientX, e.clientY, ellipseXPos, ellipseYPos, ellipseXLength, ellipseYLength);
-  ctx.clearRect(ellipseXPos - (25 + ellipseXLength), ellipseYPos - (25 + ellipseYLength), ellipseXPos + ellipseXLength, ellipseYPos + ellipseYLength);
-  drawEllipse(ctx, ellipseXPos, ellipseYPos, ellipseXLength, ellipseYLength);
+function drawEye(ctx, e, xPos, yPos, xRadius, yRadius) {
+  const {x, y} = getPupilPos(e.clientX, e.clientY, xPos, yPos, xRadius, yRadius);
+  ctx.clearRect(xPos - (25 + xRadius), yPos - (25 + yRadius), xPos + xRadius, yPos + yRadius);
+  drawEllipse(ctx, xPos, yPos, xRadius, yRadius);
   drawCircle(ctx, x, y)
 }
 
@@ -70,24 +75,13 @@ function main() {
   let ctx = canvas.getContext('2d');
 
   const secretoHead = document.getElementById("secretoHead");
-
-  // drawEllipse(ctx, 300, 300, 75, 50);
-  // drawEllipse(ctx, 500, 300, 75, 50);
-  // drawEllipse(ctx, 291, 370, 33.5, 20.5);
-  // drawEllipse(ctx, 466, 372, 36.5, 22);
   ctx.drawImage(secretoHead, 0, 0)
-
-  // drawCircle(ctx, 300, 300);
-  // drawCircle(ctx, 500, 300);
   
   canvas.addEventListener('mousemove', (e) => {
-    //left - 
-    drawEye(ctx, e, 326, 410, 33.5, 20.5);
+    // drawEye(ctx, e, 300, 300, 75, 50);
+    drawEye(ctx, e, 324, 410, 33.5, 20.5);
     drawEye(ctx, e, 500, 409, 36.5, 22);
     ctx.drawImage(secretoHead, 0, 0);
-    // right - 
-    // drawEye(ctx, e, 300, 300, 75, 50)
-    // drawEye(ctx, e, 500, 300, 75, 50)
   });
 
   window.addEventListener('resize', () => {
@@ -96,7 +90,5 @@ function main() {
     rect = canvas.getBoundingClientRect();
   });
 }
-
-
 
 main();
