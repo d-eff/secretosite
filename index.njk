@@ -1,0 +1,23 @@
+<h2>players</h2>
+<ul>
+{% for player in secretSanta.players %}
+  <li>
+    <a href="/player/{{ playerId }}/">
+      {{player.name}}
+      
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+<ul>
+{% for gift in secretSanta.gifts %}
+  <li>
+    <a href="/gift/{{ gift.id }}/">
+      {{ gift.year }} - 
+      from {{ gift.from }}
+      to {{ gift.to }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
