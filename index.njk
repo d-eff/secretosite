@@ -2,7 +2,7 @@
 <ul>
 {% for player in secretSanta.players %}
   <li>
-    <a href="/player/{{ playerId }}/">
+    <a href="/player/{{ player.id }}/">
       {{player.name}}
       
     </a>
@@ -15,6 +15,7 @@
   <li>
     <a href="/gift/{{ gift.id }}/">
       {{ gift.year }} - 
+      {{ gift.gift }}
       from {{ gift.from }}
       to {{ gift.to }}
     </a>
