@@ -1,0 +1,33 @@
+---
+pagination:
+  data: secretSanta.years
+  size: 1
+  alias: year
+permalink: "year/{{ year.id }}/index.html"
+---
+
+{% set gifts = secretSanta.gifts | filter("year", year.id) | list %}
+
+<h1>{{ year.year }}</h1>
+
+<h2>players</h2>
+<ul>
+{% for gift in gifts %}
+  <li>
+    <a href="/player/{{ gift.from }}/">{{ gift.from }}</a>
+  </li>
+{% endfor %}
+</ul>
+
+<h2>gifts</h2>
+<ul>
+{% for gift in gifts %}
+  <li>
+    {{ gift.from }} to
+    {{ gift.to }}:
+    <a href="/gift/{{ gift.id }}/">
+      {{ gift.gift }}
+    </a>
+  </li>
+{% endfor %}
+</ul>

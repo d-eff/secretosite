@@ -1,14 +1,25 @@
-<h2>players</h2>
+<h2>active players</h2>
 <ul>
-{% for player in secretSanta.players %}
+{% for player in secretSanta.players | filter("status", "active") %}
   <li>
     <a href="/player/{{ player.id }}/">
       {{player.name}}
-      
     </a>
   </li>
 {% endfor %}
 </ul>
+
+<h2>retired players</h2>
+<ul>
+{% for player in secretSanta.players | filter("status", "retired") %}
+  <li>
+    <a href="/player/{{ player.id }}/">
+      {{player.name}}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
 
 <ul>
 {% for gift in secretSanta.gifts %}

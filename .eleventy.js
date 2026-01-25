@@ -13,8 +13,13 @@ module.exports = function (eleventyConfig) {
     return arr.map(item => item[prop]);
   });
 
-  eleventyConfig.addFilter("find", function (arr=[], key="", value) {
+  eleventyConfig.addFilter("filter", function (arr=[], key="", value) {
     const thing =  arr?.filter(item => item[key] === value);
     return thing;
-});
+  });
+
+  eleventyConfig.addFilter("find", function (arr=[], key="", value) {
+    const thing =  arr?.find(item => item[key] === value);
+    return thing;
+  });
 };
