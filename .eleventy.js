@@ -1,4 +1,7 @@
-module.exports = function (eleventyConfig) {
+module.exports = function (eleventyConfig) {  
+  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
+
   eleventyConfig.addFilter("unique", function (arr) {
     if (!Array.isArray(arr)) return arr;
     return [...new Set(arr)];
@@ -20,4 +23,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("find", function (arr=[], key="", value) {
     return arr?.find(item => item[key] === value);
   });
+
+  return {
+    dir: {
+      output: "_site"
+    }
+  };
 };
