@@ -16,9 +16,8 @@ permalink: "player/{{ player.id }}/index.html"
 <h2>Years Participated</h2>
 <ul>
   {% for gift in given %}
-  {# {% set yearName = find("id", secretSanta.years[gift.year])  %} #}
     <li>
-      <a href="/year/{{ gift.year }}">{{ year.year }}</a>
+      <a href="/year/{{ gift.year }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
     </li>
   {% endfor %}
 </ul>
@@ -27,7 +26,7 @@ permalink: "player/{{ player.id }}/index.html"
 <ul>
 {% for gift in given %}
   <li>
-    {{ gift.year }} →
+    {{ (secretSanta.years | find("id", gift.year)).year }} →
     <a href="/gift/{{ gift.id }}/">
       {{ gift.to }}:
       {{ gift.gift }}

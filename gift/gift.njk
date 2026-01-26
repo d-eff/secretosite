@@ -10,7 +10,7 @@ permalink: "gift/{{ gift.id }}/index.html"
 
 <p>
   <strong>year:</strong>
-  <a href="/year/{{ gift.year }}">{{ gift.year }}</a>
+  <a href="/year/{{ gift.year }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
 </p>
 
 <p>

@@ -1,3 +1,17 @@
+---
+title: WELCOME TO THE FOURTH POLE
+---
+
+<h2>years</h2>
+<ul>
+{% for year in secretSanta.years %}
+  <li>
+    <a href="/year/{{ year.id}}/">
+      {{ year.year }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
 <h2>active players</h2>
 <ul>
 {% for player in secretSanta.players | filter("status", "active") %}
@@ -21,7 +35,8 @@
 </ul>
 
 
-<ul>
+
+{# <ul>
 {% for gift in secretSanta.gifts %}
   <li>
     <a href="/gift/{{ gift.id }}/">
@@ -32,4 +47,4 @@
     </a>
   </li>
 {% endfor %}
-</ul>
+</ul> #}

@@ -14,12 +14,10 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("filter", function (arr=[], key="", value) {
-    const thing =  arr?.filter(item => item[key] === value);
-    return thing;
+    return arr?.filter(item => item[key] === value);
   });
 
   eleventyConfig.addFilter("find", function (arr=[], key="", value) {
-    const thing =  arr?.find(item => item[key] === value);
-    return thing;
+    return arr?.find(item => item[key] === value);
   });
 };
