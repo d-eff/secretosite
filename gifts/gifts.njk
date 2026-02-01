@@ -1,0 +1,12 @@
+<ul>
+{% for gift in secretSanta.gifts %}
+  <li>
+    <a href="/gift/{{ gift.id }}/">
+      {{ gift.year }} - 
+      {{ gift.gift }}
+      from {{ gift.from }}
+      to {{ gift.to }}
+    </a>
+  </li>
+{% endfor %}
+</ul>

@@ -9,72 +9,83 @@
   </head>
   <body>
     <header>
-      <img src="/imgs/secreto_logo_horiz_lg.png" alt="shitty secret santa logo" id="logo" />
+      <a href="/"><img src="/imgs/secreto_logo_horiz_lg.png" alt="shitty secret santa logo" id="logo" /></a>
+      <menu>
+        <ul>
+          <li><a href="/"><strong>HOME</strong></a></li>
+          <li><a href="/rules"><strong>RULES</strong></a></li>
+          <li><a href="/gifts"><strong>GIFTS</strong></a></li>
+          <li><a href="/players"><strong>PLAYERS</strong></a></li>
+          <li><a href="/years"><strong>YEARS</strong></a></li>
+          <li><a href="/about"><strong>ABOUT</strong></a></li>
+        </ul>
+      </menu>
     </header>
     <main>
       
 
 
 
-<h1>George</h1>
+<div class="playerWrapper">
+  <h1>George</h1>
 
-<h2>status: retired</h2>
+  <h2>status: retired</h2>
 
-<h2>Years Participated</h2>
-<ul>
+  <h2>Years Participated</h2>
+  <ul class="yearList">
+    
+      <li>
+        <a href="/year/2014">2014</a>
+      </li>
+    
+      <li>
+        <a href="/year/2015">2015</a>
+      </li>
+    
+  </ul>
+
+  <h2>Gifts Given</h2>
+  <ul class="giftList">
   
     <li>
-      <a href="/year/2014">2014</a>
+      2014 →
+      <a href="/gift/2014-george-george/">
+        george:
+        Nothing
+      </a>
     </li>
   
     <li>
-      <a href="/year/2015">2015</a>
+      2015 →
+      <a href="/gift/2015-george-sam/">
+        sam:
+        Weird DVD
+      </a>
     </li>
   
-</ul>
+  </ul>
 
-<h2>Gifts Given</h2>
-<ul>
-
-  <li>
-    2014 →
-    <a href="/gift/2014-george-george/">
-      george:
-      Nothing
-    </a>
-  </li>
-
-  <li>
-    2015 →
-    <a href="/gift/2015-george-sam/">
-      sam:
-      Weird DVD
-    </a>
-  </li>
-
-</ul>
-
-<h2>Gifts Received</h2>
-<ul>
-
-  <li>
-    2014 ←
-    <a href="/gift/2014-george-george/">
-      george:
-      Nothing
-    </a>
-  </li>
-
-  <li>
-    2015 ←
-    <a href="/gift/2015-cross-george/">
-      cross:
-      Baseball cards
-    </a>
-  </li>
-
-</ul>
-
+  <h2>Gifts Received</h2>
+  <ul class="giftList">
+  
+    <li>
+      2014 ←
+      <a href="/gift/2014-george-george/">
+        george:
+        Nothing
+      </a>
+    </li>
+  
+    <li>
+      2015 ←
+      <a href="/gift/2015-cross-george/">
+        cross:
+        Baseball cards
+      </a>
+    </li>
+  
+  </ul>
+</div>
     </main>
     <footer>
       Shitty Secret Santa. 2010 - present. Site handmade by a human.

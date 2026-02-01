@@ -9,41 +9,43 @@ permalink: "player/{{ player.id }}/index.html"
 {% set given = secretSanta.gifts | filter("from", player.id) | list %}
 {% set received = secretSanta.gifts | filter("to", player.id) | list %}
 
-<h1>{{ player.name }}</h1>
+<div class="playerWrapper">
+  <h1>{{ player.name }}</h1>
 
-<h2>status: {{ player.status }}</h2>
+  <h2>status: {{ player.status }}</h2>
 
-<h2>Years Participated</h2>
-<ul>
+  <h2>Years Participated</h2>
+  <ul class="yearList">
+    {% for gift in given %}
+      <li>
+        <a href="/year/{{ gift.year }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Gifts Given</h2>
+  <ul class="giftList">
   {% for gift in given %}
     <li>
-      <a href="/year/{{ gift.year }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
+      {{ (secretSanta.years | find("id", gift.year)).year }} →
+      <a href="/gift/{{ gift.id }}/">
+        {{ gift.to }}:
+        {{ gift.gift }}
+      </a>
     </li>
   {% endfor %}
-</ul>
+  </ul>
 
-<h2>Gifts Given</h2>
-<ul>
-{% for gift in given %}
-  <li>
-    {{ (secretSanta.years | find("id", gift.year)).year }} →
-    <a href="/gift/{{ gift.id }}/">
-      {{ gift.to }}:
-      {{ gift.gift }}
-    </a>
-  </li>
-{% endfor %}
-</ul>
-
-<h2>Gifts Received</h2>
-<ul>
-{% for gift in received %}
-  <li>
-    {{ gift.year }} ←
-    <a href="/gift/{{ gift.id }}/">
-      {{ gift.from }}:
-      {{ gift.gift }}
-    </a>
-  </li>
-{% endfor %}
-</ul>
+  <h2>Gifts Received</h2>
+  <ul class="giftList">
+  {% for gift in received %}
+    <li>
+      {{ gift.year }} ←
+      <a href="/gift/{{ gift.id }}/">
+        {{ gift.from }}:
+        {{ gift.gift }}
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
