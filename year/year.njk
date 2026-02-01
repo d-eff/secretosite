@@ -12,9 +12,9 @@ permalink: "year/{{ year.id }}/index.html"
 
 <h2>players</h2>
 <ul>
-{% for gift in gifts %}
+{% for gift in gifts | sort(false, true, 'from') %}
   <li>
-    <a href="/player/{{ gift.from }}/">{{ gift.from }}</a>
+    <a href="/player/{{ gift.from }}/">{{ gift.from | capitalize }}</a>
   </li>
 {% endfor %}
 </ul>

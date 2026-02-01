@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {  
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("imgs");
 
   eleventyConfig.addFilter("unique", function (arr) {
     if (!Array.isArray(arr)) return arr;
@@ -24,6 +25,10 @@ module.exports = function (eleventyConfig) {
     return arr?.find(item => item[key] === value);
   });
 
+  eleventyConfig.addFilter("capitalize", function (arr) {
+    return `${arr.charAt(0).toUpperCase()}${arr.slice(1, arr.length)}`;
+  });
+  
   return {
     dir: {
       output: "_site"

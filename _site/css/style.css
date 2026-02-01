@@ -9,7 +9,11 @@ body {
 }
 
 header {
-  
+  text-align: center;
+}
+
+#logo {
+  max-width: 100%;
 }
 
 #secretoHead {
@@ -24,7 +28,12 @@ menu {
 }
 
 main {
-  max-width: 68vw;
+  background-color: #F0EAD6;
+  border-radius: 10px 10px;
+  max-width: 850px;
+  margin: -70px auto 0;
+  padding: 50px 100px;
+  width: 94vw;  
 }
 
 
@@ -32,6 +41,8 @@ footer {
   bottom: 5px;
   color: black;
   font-size: 0.8rem;
-  left: calc(50vw - 150px);
-  position: absolute;
+  margin: 25px 0 5px;
+  text-align: center;
+  /* left: calc(50vw - 150px); */
+  /* position: absolute; */
 }
