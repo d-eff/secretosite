@@ -28,10 +28,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("capitalize", function (arr) {
     return `${arr.charAt(0).toUpperCase()}${arr.slice(1, arr.length)}`;
   });
-  
+
   return {
     dir: {
-      output: "_site"
+      includes: "../_includes",
+      input: "pages",
+      output: "_site",
+      data: "../_data"
     }
   };
 };
