@@ -6,11 +6,11 @@ pagination:
 permalink: "gift/{{ gift.id }}/index.html"
 ---
 
-<div class="giftWrapper">
+<div>
   <h1>{{ gift.gift }}</h1>
 
   <p>
-    <strong>year:</strong>
+    <strong>Year:</strong>
     <a href="/year/{{ gift.year }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
   </p>
 
@@ -23,4 +23,6 @@ permalink: "gift/{{ gift.id }}/index.html"
     <strong>To:</strong>
     <a href="/player/{{ gift.to }}">{{ gift.to }}</a>
   </p>
+
+  <p>If you have photos or more details on this gift, sent them to me.</p>
 </div>

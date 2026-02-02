@@ -73,7 +73,7 @@ footer {
   }
 }
 
-h3 {
+.aboutQuestion {
   margin: 25px 0 8px;
 }
 
@@ -91,4 +91,25 @@ h3 {
 
 .newsItem {
   margin: 25px 0;
+}
+
+.playersContainer {
+  display: flex;
+  margin-top: 25px;
+}
+
+.playerRow {
+  flex: 50%;
+}
+
+.giftGroup
+.giftsContainer,
+.yearsContainer {
+  margin-top: 25px;
+}
+
+.playerWrapper {
+  h3 {
+    margin-top: 20px;
+  }
 }

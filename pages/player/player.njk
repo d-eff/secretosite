@@ -12,9 +12,9 @@ permalink: "player/{{ player.name }}/index.html"
 <div class="playerWrapper">
   <h1>{{ player.name }}</h1>
 
-  <h2>status: {{ player.status }}</h2>
+  <h3>Status: {{ player.status | capitalize }}</h3>
 
-  <h2>Years Participated</h2>
+  <h3>Years Participated</h3>
   <ul class="yearList">
     {% for gift in given %}
       <li>
@@ -23,39 +23,43 @@ permalink: "player/{{ player.name }}/index.html"
     {% endfor %}
   </ul>
 
-  <h2>Gifts Given</h2>
-  <table>
-    <thead>
-      <th>Year</th>
-      <th>To</th>
-      <th>Gift</th>
-    </thead>
-    <tbody>
-    {% for gift in given %}
+  <div class="giftsContainer">
+    <h3>Gifts Given</h3>
+    <table>
+      <thead>
+        <th>Year</th>
+        <th>To</th>
+        <th>Gift</th>
+      </thead>
+      <tbody>
+      {% for gift in given %}
+        <tr>
+          <td>{{ (secretSanta.years | find("id", gift.year)).year }}</td>
+          <td>{{ gift.to }}</td>
+          <td><a href="/gift/{{ gift.id }}/">{{ gift.gift }}</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="giftsContainer">
+    <h3>Gifts Received</h3>
+    <table>
+      <thead>
+        <th>Year</th>
+        <th>From</th>
+        <th>Gift</th>
+      </thead>
+      <tbody>
+      {% for gift in received %}
       <tr>
-        <td>{{ (secretSanta.years | find("id", gift.year)).year }}</td>
-        <td>{{ gift.to }}</td>
+        <td>{{ gift.year }}</td>
+        <td>{{ gift.from }}</td>
         <td><a href="/gift/{{ gift.id }}/">{{ gift.gift }}</a></td>
       </tr>
-    {% endfor %}
-    </tbody>
-  </table>
-
-  <h2>Gifts Received</h2>
-  <table>
-    <thead>
-      <th>Year</th>
-      <th>From</th>
-      <th>Gift</th>
-    </thead>
-    <tbody>
-    {% for gift in received %}
-    <tr>
-      <td>{{ gift.year }}</td>
-      <td>{{ gift.from }}</td>
-      <td><a href="/gift/{{ gift.id }}/">{{ gift.gift }}</a></td>
-    </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
