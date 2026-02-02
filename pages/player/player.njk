@@ -3,11 +3,11 @@ pagination:
   data: secretSanta.players
   size: 1
   alias: player
-permalink: "player/{{ player.id }}/index.html"
+permalink: "player/{{ player.name }}/index.html"
 ---
 
-{% set given = secretSanta.gifts | filter("from", player.id) | list %}
-{% set received = secretSanta.gifts | filter("to", player.id) | list %}
+{% set given = secretSanta.gifts | filter("from", player.name) | list %}
+{% set received = secretSanta.gifts | filter("to", player.name) | list %}
 
 <div class="playerWrapper">
   <h1>{{ player.name }}</h1>
