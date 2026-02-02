@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/secretosite/"
   },
   "keywords": [],
   "author": "",
