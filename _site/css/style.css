@@ -88,3 +88,7 @@ h3 {
     list-style: none;
   }
 }
+
+.newsItem {
+  margin: 25px 0;
+}
