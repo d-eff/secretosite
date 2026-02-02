@@ -1,4 +1,6 @@
-<h2>active players</h2>
+<h1>The players of this foul game</h1>
+<h4>Buncha of freaks, nutjobs, and whackos.</h4>
+<h2>Active</h2>
 <ul>
 {% for player in secretSanta.players | filter("status", "active") %}
   <li>
@@ -9,7 +11,7 @@
 {% endfor %}
 </ul>
 
-<h2>retired players</h2>
+<h2>Retired</h2>
 <ul>
 {% for player in secretSanta.players | filter("status", "retired") %}
   <li>

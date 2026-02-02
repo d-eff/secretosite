@@ -53,7 +53,7 @@ main {
   flex: 1 1 auto;
   max-width: 850px;
   margin: 0px auto 0;
-  padding: 50px 100px;
+  padding: 25px 80px;
   width: 94vw;  
 }
 
@@ -71,4 +71,8 @@ footer {
     display: inline-block;
     list-style: none;
   }
+}
+
+h3 {
+  margin: 25px 0 8px;
 }

@@ -7,10 +7,11 @@ permalink: "year/{{ year.id }}/index.html"
 ---
 
 {% set gifts = secretSanta.gifts | filter("year", year.id) | list %}
+
 <div class="yearWrapper">
   <h1>{{ year.year }}</h1>
 
-  <h2>players</h2>
+  <h2>Players</h2>
   <ul class="playerList">
   {% for gift in gifts | sort(false, true, 'from') %}
     <li>
@@ -19,16 +20,23 @@ permalink: "year/{{ year.id }}/index.html"
   {% endfor %}
   </ul>
 
-  <h2>gifts</h2>
-  <ul class="giftList">
-  {% for gift in gifts %}
-    <li>
-      {{ gift.from }} to
-      {{ gift.to }}:
-      <a href="/gift/{{ gift.id }}/">
-        {{ gift.gift }}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
+  <h2>Gifts</h2>
+  <table>
+    <thead>
+      <th>From</th>
+      <th>To</th>
+      <th>Gift</th>
+    </thead>
+    {% for gift in gifts %}
+      <tr>
+        <td>{{ gift.from | capitalize }}</td>
+        <td>{{ gift.to | capitalize}}</td>
+        <td>
+          <a href="/gift/{{ gift.id }}/">
+            {{ gift.gift }}
+          </a> 
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
 </div>
