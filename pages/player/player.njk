@@ -24,28 +24,38 @@ permalink: "player/{{ player.name }}/index.html"
   </ul>
 
   <h2>Gifts Given</h2>
-  <ul class="giftList">
-  {% for gift in given %}
-    <li>
-      {{ (secretSanta.years | find("id", gift.year)).year }} →
-      <a href="/gift/{{ gift.id }}/">
-        {{ gift.to }}:
-        {{ gift.gift }}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
+  <table>
+    <thead>
+      <th>Year</th>
+      <th>To</th>
+      <th>Gift</th>
+    </thead>
+    <tbody>
+    {% for gift in given %}
+      <tr>
+        <td>{{ (secretSanta.years | find("id", gift.year)).year }}</td>
+        <td>{{ gift.to }}</td>
+        <td><a href="/gift/{{ gift.id }}/">{{ gift.gift }}</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 
   <h2>Gifts Received</h2>
-  <ul class="giftList">
-  {% for gift in received %}
-    <li>
-      {{ gift.year }} ←
-      <a href="/gift/{{ gift.id }}/">
-        {{ gift.from }}:
-        {{ gift.gift }}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
+  <table>
+    <thead>
+      <th>Year</th>
+      <th>From</th>
+      <th>Gift</th>
+    </thead>
+    <tbody>
+    {% for gift in received %}
+    <tr>
+      <td>{{ gift.year }}</td>
+      <td>{{ gift.from }}</td>
+      <td><a href="/gift/{{ gift.id }}/">{{ gift.gift }}</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 </div>
