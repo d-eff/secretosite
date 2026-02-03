@@ -14,6 +14,10 @@ body {
   font-family: 'tahoma', sans-serif;
 }
 
+ul {
+  list-style-position: inside;
+}
+
 #pageContainer {
   display: flex;
   flex-flow: column;
@@ -70,6 +74,7 @@ footer {
   li {
     display: inline-block;
     list-style: none;
+    margin: 0 12px 0 0;
   }
 }
 
@@ -83,9 +88,10 @@ footer {
 
 .yearList {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   li {
     list-style: none;
+    margin: 0 12px 0 0;
   }
 }
 
@@ -109,5 +115,24 @@ footer {
 .playerWrapper {
   h3 {
     margin-top: 20px;
+  }
+}
+
+.rulesContainer {
+  ol {
+    list-style: none;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 10px;
+  }
+
+  menu {
+    ul {
+      flex-flow: column wrap;
+      max-height: 80px;
+    }
   }
 }
