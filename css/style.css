@@ -58,7 +58,7 @@ main {
   max-width: 850px;
   margin: 0px auto 0;
   padding: 25px 80px;
-  width: 94vw;  
+  width: 100%;
 }
 
 footer {
@@ -121,6 +121,12 @@ footer {
 .rulesContainer {
   ol {
     list-style: none;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    width: 94vw;
   }
 }
 
