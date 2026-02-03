@@ -11,17 +11,17 @@ permalink: "gift/{{ gift.id }}/index.html"
 
   <p>
     <strong>Year:</strong>
-    <a href="/year/{{ gift.year }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
+    <a href="{{ '/year/' + gift.year | url }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
   </p>
 
   <p>
     <strong>From:</strong>
-    <a href="/player/{{ gift.from }}">{{ gift.from }}</a>
+    <a href="{{ '/player/' + gift.from | url }}">{{ gift.from }}</a>
   </p>
 
   <p>
     <strong>To:</strong>
-    <a href="/player/{{ gift.to }}">{{ gift.to }}</a>
+    <a href="{{ '/player/' + gift.to | url }}">{{ gift.to }}</a>
   </p>
 
   <p>If you have photos or more details on this gift, sent them to me.</p>

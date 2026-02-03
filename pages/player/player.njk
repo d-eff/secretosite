@@ -18,7 +18,7 @@ permalink: "player/{{ player.name }}/index.html"
   <ul class="yearList">
     {% for gift in given %}
       <li>
-        <a href="/year/{{ gift.year }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
+        <a href="{{ '/year/' + gift.year | url }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
       </li>
     {% endfor %}
   </ul>
@@ -36,7 +36,7 @@ permalink: "player/{{ player.name }}/index.html"
         <tr>
           <td>{{ (secretSanta.years | find("id", gift.year)).year }}</td>
           <td>{{ gift.to }}</td>
-          <td><a href="/gift/{{ gift.id }}/">{{ gift.gift }}</a></td>
+          <td><a href="{{ '/gift/' + gift.id | url }}">{{ gift.gift }}</a></td>
         </tr>
       {% endfor %}
       </tbody>
@@ -56,7 +56,7 @@ permalink: "player/{{ player.name }}/index.html"
       <tr>
         <td>{{ gift.year }}</td>
         <td>{{ gift.from }}</td>
-        <td><a href="/gift/{{ gift.id }}/">{{ gift.gift }}</a></td>
+        <td><a href="{{ '/gift/' + gift.id | url }}">{{ gift.gift }}</a></td>
       </tr>
       {% endfor %}
       </tbody>

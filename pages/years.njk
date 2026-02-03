@@ -6,7 +6,7 @@
 <ul>
 {% for year in secretSanta.years %}
   <li>
-    <a href="/year/{{ year.id}}/">
+    <a href="{{ '/year/' + year.id | url }}">
       {{ year.year }}
     </a>
   </li>

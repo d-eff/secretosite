@@ -17,7 +17,7 @@ permalink: "year/{{ year.id }}/index.html"
   <ul class="playerList">
   {% for gift in gifts | sort(false, true, 'from') %}
     <li>
-      <a href="/player/{{ gift.from }}/">{{ gift.from | capitalize }}</a>
+      <a href="{{ '/player/' + gift.from | url }}">{{ gift.from | capitalize }}</a>
     </li>
   {% endfor %}
   </ul>
@@ -34,7 +34,7 @@ permalink: "year/{{ year.id }}/index.html"
         <td>{{ gift.from | capitalize }}</td>
         <td>{{ gift.to | capitalize}}</td>
         <td>
-          <a href="/gift/{{ gift.id }}/">
+          <a href="{{ '/gift/' + gift.id | url }}">
             {{ gift.gift }}
           </a> 
         </td>

@@ -10,7 +10,7 @@
       <ul>
       {% for gift in items %}
         <li>
-          <a href="/gift/{{ gift.id }}/">
+          <a href="{{ '/gift/' + gift.id | url }}">
             {{ gift.year }} - 
             {{ gift.gift }}
             from {{ gift.from }}
