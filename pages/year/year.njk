@@ -11,34 +11,38 @@ permalink: "year/{{ year.id }}/index.html"
 <div class="yearWrapper">
   <h1>{{ year.year }}</h1>
 
-  <p>{{ year.description }}</p>
+  <h4 class="comment">{{ year.description }}</h4>
 
-  <h2>Players</h2>
-  <ul class="playerList">
-  {% for gift in gifts | sort(false, true, 'from') %}
-    <li>
-      <a href="{{ '/player/' + gift.from | url }}">{{ gift.from | capitalize }}</a>
-    </li>
-  {% endfor %}
-  </ul>
-
-  <h2>Gifts</h2>
-  <table>
-    <thead>
-      <th>From</th>
-      <th>To</th>
-      <th>Gift</th>
-    </thead>
-    {% for gift in gifts %}
-      <tr>
-        <td>{{ gift.from | capitalize }}</td>
-        <td>{{ gift.to | capitalize}}</td>
-        <td>
-          <a href="{{ '/gift/' + gift.id | url }}">
-            {{ gift.gift }}
-          </a> 
-        </td>
-      </tr>
+  <div class="content">
+    <h2>Players</h2>
+    <ul class="playerList">
+    {% for gift in gifts | sort(false, true, 'from') %}
+      <li>
+        <a href="{{ '/player/' + gift.from | url }}">{{ gift.from | capitalize }}</a>
+      </li>
     {% endfor %}
-  </table>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h2>Gifts</h2>
+    <table>
+      <thead>
+        <th>From</th>
+        <th>To</th>
+        <th>Gift</th>
+      </thead>
+      {% for gift in gifts %}
+        <tr>
+          <td>{{ gift.from | capitalize }}</td>
+          <td>{{ gift.to | capitalize}}</td>
+          <td>
+            <a href="{{ '/gift/' + gift.id | url }}">
+              {{ gift.gift }}
+            </a> 
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
 </div>
