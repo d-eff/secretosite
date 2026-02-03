@@ -7,7 +7,7 @@
     <ul>
     {% for player in secretSanta.players | filter("status", "active") %}
       <li>
-        <a href="{{ '/player/' + player.id | url }}">
+        <a href="{{ '/player/' + player.name | url }}">
           {{player.name}}
         </a>
       </li>
@@ -19,7 +19,7 @@
     <ul>
     {% for player in secretSanta.players | filter("status", "retired") %}
       <li>
-        <a href="{{ '/player/' + player.id | url }}">
+        <a href="{{ '/player/' + player.name | url }}">
           {{player.name}}
         </a>
       </li>
