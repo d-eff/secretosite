@@ -3,9 +3,9 @@
 <h1>Every single gift that has ever been given</h1>
 <h4 class="comment">Except for the ones I missed.</h4>
 
-<div class="giftsContainer">
+<div class="content">
   {% for year, items in secretSanta.gifts | groupby("year") %}
-    <div class="giftGroup">
+    <div class="content">
       {{ year }}
       <ul>
       {% for gift in items %}
