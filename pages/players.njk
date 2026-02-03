@@ -5,7 +5,7 @@
   <div class="playerRow">
     <h2>Active</h2>
     <ul>
-    {% for player in secretSanta.players | filter("status", "active") %}
+    {% for player in secretSanta.players | filter("status", "active") | sort(false, true, 'name') %}
       <li>
         <a href="{{ '/player/' + player.name | url }}">
           {{player.name}}
@@ -17,7 +17,7 @@
   <div class="playerRow">
     <h2>Retired</h2>
     <ul>
-    {% for player in secretSanta.players | filter("status", "retired") %}
+    {% for player in secretSanta.players | filter("status", "retired") | sort(false, true, 'name') %}
       <li>
         <a href="{{ '/player/' + player.name | url }}">
           {{player.name}}
