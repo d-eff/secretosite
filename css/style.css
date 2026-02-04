@@ -51,14 +51,22 @@ menu {
   }
 }
 
+.mainRow {
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0 auto;
+}
+
 main {
   background-color: #F0EAD6;
   border-radius: 10px 10px;
-  flex: 1 1 auto;
-  max-width: 850px;
-  margin: 0px auto 0;
+  margin: 0 12px;
   padding: 25px 80px;
-  width: 100%;
+  width: 850px;
+}
+
+.adContainer {
+  margin-top: 5px;
 }
 
 footer {
@@ -121,6 +129,12 @@ footer {
 .rulesContainer {
   ol {
     list-style: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .adContainer {
+    display: none;
   }
 }
 
