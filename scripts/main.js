@@ -1,3 +1,25 @@
+//TOGGLES
+const page = document.getElementById('pageContainer');
+const darkModeToggle = document.getElementById('darkMode');
+const adModeToggle = document.getElementById('adMode');
+
+darkModeToggle.addEventListener('change', (e) => {
+  if(e.target.checked) {
+    page.classList.add('darkMode');
+  } else {
+    page.classList.remove('darkMode');
+  }
+});
+
+adModeToggle.addEventListener('change', (e) => {
+  if(e.target.checked) {
+    page.classList.remove('disableAds');
+  } else {
+    page.classList.add('disableAds');
+  }
+})
+
+//BANNERS
 const banners = [
   { src: "bookchains.png", alt: "Buy bookchains now, before your books escape." },
   { src: "moonshoes.png", alt: "PUT ON THE MOON SHOES, SHINJI." },
