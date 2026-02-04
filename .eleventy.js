@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("imgs");
+  eleventyConfig.addPassthroughCopy("scripts");
 
   eleventyConfig.addFilter("unique", function (arr) {
     if (!Array.isArray(arr)) return arr;

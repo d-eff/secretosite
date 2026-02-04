@@ -5,6 +5,7 @@
     <link rel="icon" href="{{ '/favicon.ico' | url }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    <script src="/scripts/ads.js" defer></script>
     <title>{{ title | default("WELCOME TO THE FOURTH POLE") }}</title>
   </head>
   <body>
@@ -22,9 +23,15 @@
           </ul>
         </menu>
       </header>
-      <main>
+
+      <div class="mainRow">
+        <div class="adContainer"><img src="" alt=""  id="leftAd"/></div>
+        <main>
         {{ content | safe }}
-      </main>
+        </main>
+        <div class="adContainer"><img src="" alt=""  id="rightAd"/></div>
+      </div>
+
       <footer>
         Shitty Secret Santa. 2010 - present. Site made by a human.
       </footer>
