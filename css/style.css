@@ -65,7 +65,7 @@ main {
   width: 850px;
 }
 
-.adContainer {
+.bannerContainer {
   margin-top: 5px;
 }
 
@@ -133,7 +133,7 @@ footer {
 }
 
 @media (max-width: 1200px) {
-  .adContainer {
+  .bannerContainer {
     display: none;
   }
 }
