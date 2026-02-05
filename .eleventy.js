@@ -1,4 +1,7 @@
-module.exports = function (eleventyConfig) {  
+const fs = require("fs");
+const path = require("path");
+
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("imgs");
@@ -28,6 +31,30 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("capitalize", function (arr) {
     return `${arr.charAt(0).toUpperCase()}${arr.slice(1, arr.length)}`;
+  });
+
+   eleventyConfig.addCollection("photosByYear", () => {
+    const dir = "imgs/gifts";
+    const files = fs.readdirSync(dir);
+
+    const byYear = {};
+
+    files.forEach(file => {
+      const match = file.match(/^(\d{4})/);
+      if (!match) return;
+
+      const year = match[1];
+
+      byYear[year] ??= [];
+      byYear[year].push(`/imgs/gifts/${file}`);
+    });
+
+    const photosByYear = Object.entries(byYear).map(([year, images]) => ({
+      year,
+      images: images.sort()
+    }));
+    console.log(photosByYear)
+    return photosByYear;
   });
 
   return {

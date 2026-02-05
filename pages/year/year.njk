@@ -7,6 +7,7 @@ permalink: "year/{{ year.id }}/index.html"
 ---
 
 {% set gifts = secretSanta.gifts | filter("year", year.id) | list %}
+{% set imgs = collections.photosByYear | find("year", year.id) %}
 
 <div class="yearWrapper">
   <h1>{{ year.year }}</h1>
@@ -44,5 +45,25 @@ permalink: "year/{{ year.id }}/index.html"
         </tr>
       {% endfor %}
     </table>
+  </div>
+
+  <div class="pics">
+    {% for img in imgs.images %}
+      <img class="giftPic" src="{{ img | url }}" />
+    {% endfor %}
+  </div>
+
+  <div class="yearNav">
+    {% if pagination.previous %}
+      <a href="{{ pagination.previous | url }}">
+        ← {{ pagination.page.previous.id}}
+      </a>
+    {% endif %}
+
+    {% if pagination.next %}
+      <a href="{{ pagination.next | url }}">
+        {{ pagination.page.next.id}} →
+      </a>
+    {% endif %}
   </div>
 </div>

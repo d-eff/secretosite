@@ -143,6 +143,12 @@ footer {
   }
 }
 
+.yearNav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
 .newsItem {
   margin: 25px 0;
 }
@@ -172,11 +178,18 @@ footer {
   }
 }
 
-.toggleContainer {
-  vertical-align: middle;
+.pics {
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.giftPic {
+  max-width: 220px;
+}
+
+/* ============================================= */
 /* FANCY SWITCH */
+/* ============================================= */
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -222,8 +235,9 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-
+/* ============================================= */
 /* RESPONSIVE STYLES */
+/* ============================================= */
 @media (max-width: 1200px) {
   .bannerContainer {
     display: none;
