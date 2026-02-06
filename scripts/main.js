@@ -21,6 +21,7 @@ adModeToggle.addEventListener('change', (e) => {
 
 //BANNERS
 const banners = [
+  { src: "ape.png", alt: "DO IT"},
   { src: "bookchains.png", alt: "Buy bookchains now, before your books escape." },
   { src: "horse1.png", alt: "Horse Illustrated. You know why you're here."},
   { src: "horse2.png", alt: "Horse Illustrated. We've got what you want."},
