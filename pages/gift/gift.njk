@@ -25,4 +25,23 @@ permalink: "gift/{{ gift.id }}/index.html"
   </p>
 
   <p>If you have photos or more details on this gift, send them to me.</p>
+
+  {# {% for img in gift.images %}
+  <img src="{{ '/imgs/gifts/' + img + '.webp' | url}}" />
+  {% endfor %} #}
+
+  <div class="pagination">
+    {% if pagination.previous %}
+    <span>
+      PREV:
+        <a href="{{ pagination.previous | url }}">{{ pagination.page.previous.year }}: {{ pagination.page.previous.from }} → {{ pagination.page.previous.to }}</a>
+      </span>
+    {% endif %}
+
+    {% if pagination.next %}
+    <span>
+        NEXT: <a href="{{ pagination.next | url }}">{{ pagination.page.next.year }}: {{ pagination.page.next.from }} → {{ pagination.page.next.to }}</a>
+      </span>
+    {% endif %}
+  </div>
 </div>

@@ -53,7 +53,7 @@ permalink: "year/{{ year.id }}/index.html"
     {% endfor %}
   </div> #}
 
-  <div class="yearNav">
+  <div class="pagination">
     {% if pagination.previous %}
       <a href="{{ pagination.previous | url }}">
         ← {{ pagination.page.previous.id}}

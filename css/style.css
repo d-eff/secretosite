@@ -13,6 +13,19 @@ body {
   font-family: 'tahoma', sans-serif;
 }
 
+a {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: #ff0000;
+}
+a:visited {
+  color: #ff0000;
+}
+
 #page404 {
   margin: 20px auto;
   max-width: 850px;
@@ -41,11 +54,6 @@ ul {
     }
     main {
       background-color: black;
-    }
-    menu {
-      a {
-        color: black;
-      }
     }
   }
 
@@ -76,10 +84,14 @@ menu {
   li {
     list-style: none;
   }
-  a {
+  a,
+  a:visited {
     color: #F0EAD6;
     font-size: 2rem;
     text-decoration: none;
+  }
+  a:hover {
+    color: black;
   }
 }
 
@@ -134,7 +146,7 @@ footer {
   font-style: italic;
 }
 
-.yearList {
+.yearMenu {
   display: flex;
   flex-wrap: wrap;
   li {
@@ -143,7 +155,13 @@ footer {
   }
 }
 
-.yearNav {
+.yearList {
+  a {
+    font-size: 1.4rem;
+  }
+}
+
+.pagination {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -156,6 +174,9 @@ footer {
 .playersContainer {
   display: flex;
   margin-top: 25px;
+  a {
+    font-size: 1.25rem;
+  }
 }
 
 .playerRow {

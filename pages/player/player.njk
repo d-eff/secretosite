@@ -15,7 +15,7 @@ permalink: "player/{{ player.name }}/index.html"
   <h3>Status: {{ player.status | capitalize }}</h3>
 
   <h3>Years Participated</h3>
-  <ul class="yearList">
+  <ul class="yearMenu">
     {% for gift in given %}
       <li>
         <a href="{{ '/year/' + gift.year | url }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
