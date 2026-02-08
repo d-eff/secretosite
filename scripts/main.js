@@ -11,13 +11,15 @@ darkModeToggle.addEventListener('change', (e) => {
   }
 });
 
-adModeToggle.addEventListener('change', (e) => {
-  if(e.target.checked) {
-    page.classList.remove('disableAds');
-  } else {
-    page.classList.add('disableAds');
-  }
-})
+if(adModeToggle) {
+  adModeToggle.addEventListener('change', (e) => {
+    if(e.target.checked) {
+      page.classList.remove('disableAds');
+    } else {
+      page.classList.add('disableAds');
+    }
+  });
+}
 
 //BANNERS
 const banners = [

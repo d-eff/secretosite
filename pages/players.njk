@@ -1,29 +1,31 @@
-<h1>The players of this foul game</h1>
-<h4 class="comment">Bunch of freaks.</h4>
+<div class="page">
+  <h1>The players of this foul game</h1>
+  <h4 class="comment">Bunch of freaks.</h4>
 
-<div class="playersContainer">
-  <div class="playerRow">
-    <h2>Active</h2>
-    <ul>
-    {% for player in secretSanta.players | filter("status", "active") | sort(false, true, 'name') %}
-      <li>
-        <a href="{{ '/player/' + player.name | url }}">
-          {{player.name}}
-        </a>
-      </li>
-    {% endfor %}
-    </ul>
-  </div>
-  <div class="playerRow">
-    <h2>Retired</h2>
-    <ul>
-    {% for player in secretSanta.players | filter("status", "retired") | sort(false, true, 'name') %}
-      <li>
-        <a href="{{ '/player/' + player.name | url }}">
-          {{player.name}}
-        </a>
-      </li>
-    {% endfor %}
-    </ul>
+  <div class="playersContainer">
+    <div class="playerRow">
+      <h2>Active</h2>
+      <ul>
+      {% for player in secretSanta.players | filter("status", "active") | sort(false, true, 'name') %}
+        <li>
+          <a href="{{ '/player/' + player.name | url }}">
+            {{player.name}}
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="playerRow">
+      <h2>Retired</h2>
+      <ul>
+      {% for player in secretSanta.players | filter("status", "retired") | sort(false, true, 'name') %}
+        <li>
+          <a href="{{ '/player/' + player.name | url }}">
+            {{player.name}}
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>

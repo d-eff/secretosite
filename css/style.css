@@ -51,6 +51,9 @@ a:visited {
     main {
       background-color: black;
     }
+    a:visited {
+      color: black;
+    }
   }
 
   &.disableAds {
@@ -116,14 +119,22 @@ footer {
   align-self: center;
   bottom: 5px;
   color: black;
-  display: flex;
-  flex: 0 1 40px;
   font-size: 0.8rem;
-  justify-content: space-between;
   max-width: 850px;
   padding: 12px 0 10px;
   text-align: center;
   width: 100%;
+}
+
+#footerToggles {
+  display: flex;
+  flex: 0 1 40px;
+  justify-content: space-between;
+}
+
+#footerText {
+  font-size: 0.65rem;
+  font-style: italic;
 }
 
 
@@ -218,7 +229,7 @@ footer {
   color: #ff0000;
 }
 
-.rulesContainer {
+#rulesPage {
   ol {
     list-style: none;
   }
@@ -231,6 +242,20 @@ footer {
 
 .giftPic {
   max-width: 220px;
+}
+
+#secretoHeadPage {
+  margin: 40px 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+#secreto {
+  aspect-ratio: 800/624;
+  height: auto;
+  width: 100%;
+  display: block;
 }
 
 /* ============================================= */

@@ -9,7 +9,7 @@ permalink: "player/{{ player.name }}/index.html"
 {% set given = secretSanta.gifts | filter("from", player.name) | list %}
 {% set received = secretSanta.gifts | filter("to", player.name) | list %}
 
-<div id="playerPage">
+<div id="playerPage" class="page">
   <h1>{{ player.name }}</h1>
 
   <h3>Status: <span class="playerStatus">{{ player.status | capitalize }}</span></h3>
