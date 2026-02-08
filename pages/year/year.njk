@@ -47,11 +47,11 @@ permalink: "year/{{ year.id }}/index.html"
     </table>
   </div>
 
-  <div class="pics">
+  {# <div class="pics">
     {% for img in imgs.images %}
-      <img class="giftPic" src="{{ img | url }}" />
+      <a href="{{ img | url }}"><img class="giftPic" src="{{ img | url }}" /></a>
     {% endfor %}
-  </div>
+  </div> #}
 
   <div class="yearNav">
     {% if pagination.previous %}
