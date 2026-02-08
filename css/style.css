@@ -37,10 +37,6 @@ a:visited {
   }
 }
 
-ul {
-  list-style-position: inside;
-}
-
 #pageContainer {
   display: flex;
   flex-flow: column;
@@ -130,6 +126,10 @@ footer {
   width: 100%;
 }
 
+
+/* ============================================= */
+/* SPECIFIC STUFF */
+/* ============================================= */
 .playerList {
   li {
     display: inline-block;
@@ -165,6 +165,9 @@ footer {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  .last {
+    margin-left: auto;
+  }
 }
 
 .newsItem {
@@ -187,10 +190,32 @@ footer {
   margin-top: 25px;
 }
 
-.playerWrapper {
-  h3 {
-    margin-top: 20px;
+#giftPage {
+  height: 100%;
+}
+
+.giftTable {
+  th {
+    text-align: left;
   }
+  td {
+    padding: 0 25px 3px 0;
+  }
+}
+
+#yearPage {
+  height: 100%;
+  padding-bottom: 25px;
+}
+
+#giftsListPage {
+  li {
+    padding-bottom: 3px;
+  }
+}
+
+.playerStatus {
+  color: #ff0000;
 }
 
 .rulesContainer {
@@ -277,6 +302,11 @@ input:checked + .slider:before {
 @media (max-width: 700px) {
   main {
     padding: 10px;
+  }
+
+
+  ul {
+    list-style-position: inside;
   }
 
   menu {

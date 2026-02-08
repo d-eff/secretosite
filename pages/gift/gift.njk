@@ -6,42 +6,45 @@ pagination:
 permalink: "gift/{{ gift.id }}/index.html"
 ---
 
-<div>
+<div id="giftPage">
   <h1>{{ gift.gift }}</h1>
 
-  <p>
-    <strong>Year:</strong>
-    <a href="{{ '/year/' + gift.year | url }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
-  </p>
+  <div class="content">
+    <p>
+      <strong>Year:</strong>
+      <a href="{{ '/year/' + gift.year | url }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
+    </p>
 
-  <p>
-    <strong>From:</strong>
-    <a href="{{ '/player/' + gift.from | url }}">{{ gift.from }}</a>
-  </p>
+    <p>
+      <strong>From:</strong>
+      <a href="{{ '/player/' + gift.from | url }}">{{ gift.from }}</a>
+    </p>
 
-  <p>
-    <strong>To:</strong>
-    <a href="{{ '/player/' + gift.to | url }}">{{ gift.to }}</a>
-  </p>
+    <p>
+      <strong>To:</strong>
+      <a href="{{ '/player/' + gift.to | url }}">{{ gift.to }}</a>
+    </p>
+  </div>
 
   <p>If you have photos or more details on this gift, send them to me.</p>
 
   {# {% for img in gift.images %}
   <img src="{{ '/imgs/gifts/' + img + '.webp' | url}}" />
   {% endfor %} #}
-
-  <div class="pagination">
+</div>
+<div class="pagination">
     {% if pagination.previous %}
     <span>
       PREV:
-        <a href="{{ pagination.previous | url }}">{{ pagination.page.previous.year }}: {{ pagination.page.previous.from }} → {{ pagination.page.previous.to }}</a>
+        <a href="{{ pagination.previous | url }}">{{ pagination.page.previous.year }} {{ pagination.page.previous.from }} → {{ pagination.page.previous.to }}</a>
       </span>
     {% endif %}
 
     {% if pagination.next %}
-    <span>
-        NEXT: <a href="{{ pagination.next | url }}">{{ pagination.page.next.year }}: {{ pagination.page.next.from }} → {{ pagination.page.next.to }}</a>
+    
+    
+    <span class="{{ 'last' if pagination.previous === null }}">
+        NEXT: <a href="{{ pagination.next | url }}">{{ pagination.page.next.year }} {{ pagination.page.next.from }} → {{ pagination.page.next.to }}</a>
       </span>
     {% endif %}
   </div>
-</div>

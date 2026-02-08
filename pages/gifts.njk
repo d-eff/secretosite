@@ -1,24 +1,24 @@
 {# {% set groupedGifts = secretSanta.gifts | groupby("year") %} #}
 
-<h1>Every single gift that has ever been given</h1>
-<h4 class="comment">Except for the ones I missed.</h4>
-
-<div class="content">
-  {% for year, items in secretSanta.gifts | groupby("year") %}
-    <div class="content">
-      {{ year }}
-      <ul>
-      {% for gift in items %}
-        <li>
-          <a href="{{ '/gift/' + gift.id | url }}">
-            {{ gift.gift }}
-            from {{ gift.from }}
-            to {{ gift.to }}
-          </a>
-        </li>
-      {% endfor %}
-      </ul>
-    </div>
-  {% endfor %}
-  
+<div id="giftsListPage">
+  <h1>Every single gift that has ever been given</h1>
+  <h4 class="comment">Except for the ones I missed.</h4>
+  <div class="content">
+    {% for year, items in secretSanta.gifts | groupby("year") %}
+      <div class="content">
+        {{ year }}
+        <ul>
+        {% for gift in items %}
+          <li>
+            <a href="{{ '/gift/' + gift.id | url }}">
+              {{ gift.gift }}
+              from {{ gift.from }}
+              to {{ gift.to }}
+            </a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
 </div>
