@@ -14,14 +14,16 @@ permalink: "player/{{ player.name }}/index.html"
 
   <h3>Status: <span class="playerStatus">{{ player.status | capitalize }}</span></h3>
 
-  <h3>Years Participated</h3>
-  <ul class="yearMenu">
-    {% for gift in given %}
-      <li>
-        <a href="{{ '/year/' + gift.year | url }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="content">
+    <h3>Years Participated</h3>
+    <ul class="yearMenu">
+      {% for gift in given %}
+        <li>
+          <a href="{{ '/year/' + gift.year | url }}">{{ (secretSanta.years | find("id", gift.year)).year }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
   <div class="content">
     <h3 class="">Given</h3>
