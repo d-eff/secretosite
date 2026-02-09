@@ -51,6 +51,9 @@ a:visited {
     main {
       background-color: black;
     }
+    a {
+      color: black;
+    }
     a:visited {
       color: black;
     }
