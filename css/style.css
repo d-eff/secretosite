@@ -105,7 +105,7 @@ main {
   border-radius: 10px 10px;
   margin: 0 12px;
   min-height: 610px;
-  padding: 25px 80px;
+  padding: 25px 80px 35px;
   width: 850px;
 }
 
@@ -204,6 +204,7 @@ footer {
 #giftPage {
   height: 100%;
   img {
+    margin-top: 15px;
     width: 100%
   }
 }

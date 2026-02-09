@@ -26,7 +26,7 @@ permalink: "gift/{{ gift.id }}/index.html"
     </p>
   </div>
 
-  <p>If you have photos or more details on this gift, send them to me.</p>
+  {# <p>If you have photos or more details on this gift, send them to me.</p> #}
 
   {% for img in gift.images %}
   <img src="{{ '/imgs/gifts/' + img + '.webp' | url}}" />
