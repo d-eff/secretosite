@@ -53,7 +53,6 @@ module.exports = function (eleventyConfig) {
       year,
       images: images.sort()
     }));
-    console.log(photosByYear)
     return photosByYear;
   });
 
