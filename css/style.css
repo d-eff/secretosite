@@ -94,6 +94,9 @@ menu {
     font-size: 2rem;
     text-decoration: none;
   }
+  a.selected {
+    color: black;
+  }
   a:hover {
     color: black;
   }
