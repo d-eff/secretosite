@@ -50,6 +50,7 @@ a:visited {
     }
     main {
       background-color: black;
+      border: 5px solid black;
     }
     a {
       color: black;
@@ -77,6 +78,7 @@ header {
 }
 
 menu {
+  margin-top: 8px;
   ul {
     display: flex;
     justify-content: space-evenly;
@@ -100,11 +102,12 @@ menu {
 .mainRow {
   display: flex;
   flex: 1 1 auto;
-  margin: 0 auto;
+  margin: 15px auto 10px;
 }
 
 main {
   background-color: #F0EAD6;
+  border: 5px solid white;
   border-radius: 10px 10px;
   margin: 0 12px;
   min-height: 610px;
