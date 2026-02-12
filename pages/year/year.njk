@@ -55,8 +55,10 @@ permalink: "year/{{ year.id }}/index.html"
     {% endif %}
 
     {% if pagination.next %}
+    <span class="{{ 'last' if pagination.previous === null }}">
       <a href="{{ pagination.next | url }}">
         {{ pagination.page.next.id}} →
       </a>
+      </span>
     {% endif %}
   </div>

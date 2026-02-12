@@ -34,16 +34,14 @@ permalink: "gift/{{ gift.id }}/index.html"
 </div>
 <div class="pagination">
     {% if pagination.previous %}
-    <span>
+      <span>
       PREV:
         <a href="{{ pagination.previous | url }}">{{ pagination.page.previous.year }} {{ pagination.page.previous.from }} → {{ pagination.page.previous.to }}</a>
       </span>
     {% endif %}
 
     {% if pagination.next %}
-    
-    
-    <span class="{{ 'last' if pagination.previous === null }}">
+      <span class="{{ 'last' if pagination.previous === null }}">
         NEXT: <a href="{{ pagination.next | url }}">{{ pagination.page.next.year }} {{ pagination.page.next.from }} → {{ pagination.page.next.to }}</a>
       </span>
     {% endif %}
