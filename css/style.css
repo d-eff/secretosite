@@ -158,10 +158,6 @@ footer {
   }
 }
 
-.aboutQuestion {
-  margin: 25px 0 8px;
-}
-
 .comment {
   font-style: italic;
 }
@@ -208,6 +204,16 @@ footer {
 
 .content {
   margin-top: 25px;
+}
+
+#homePage {
+  h3 {
+    font-size: 1.3rem;
+    margin: 25px 0 8px;
+  }
+  p {
+    font-size: 1.1rem;
+  }
 }
 
 #giftPage {
@@ -358,6 +364,9 @@ input:checked + .slider:before {
     padding: 10px 10px 35px;
   }
 
+  #homeLink {
+    display: none;
+  }
 
   ul {
     list-style-position: inside;
@@ -365,7 +374,6 @@ input:checked + .slider:before {
 
   menu {
     ul {
-      flex-flow: column wrap;
       max-height: 80px;
     }
   }

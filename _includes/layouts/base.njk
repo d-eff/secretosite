@@ -14,12 +14,10 @@
         <a href="{{ '/' | url }}"><img src="{{ '/imgs/secreto_logo_horiz_lg.png' | url }}" alt="shitty secret santa logo" id="logo" /></a>
         <menu>
           <ul>
-            <li><a class="{{ 'selected' if page.url === '/' }}" href="{{ '/' | url }}"><strong>NEWS</strong></a></li>
+            <li id="homeLink"><a class="{{ 'selected' if page.url === '/' }}" href="{{ '/' | url }}"><strong>HOME</strong></a></li>
             <li><a class="{{ 'selected' if page.url === '/rules/' }}" href="{{ '/rules' | url }}"><strong>RULES</strong></a></li>
             <li><a class="{{ 'selected' if page.url === '/gifts/' }}" href="{{ '/gifts' | url }}"><strong>GIFTS</strong></a></li>
             <li><a class="{{ 'selected' if page.url === '/players/' }}" href="{{ '/players' | url }}"><strong>PLAYERS</strong></a></li>
-            {# <li><a class="{{ 'selected' if page.url === '/years/' }}" href="{{ '/years' | url }}"><strong>YEARS</strong></a></li> #}
-            <li><a class="{{ 'selected' if page.url === '/about/' }}" href="{{ '/about' | url }}"><strong>ABOUT</strong></a></li>
           </ul>
         </menu>
       </header>
