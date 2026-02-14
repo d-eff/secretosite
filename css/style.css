@@ -158,10 +158,6 @@ footer {
   }
 }
 
-.aboutQuestion {
-  margin: 25px 0 8px;
-}
-
 .comment {
   font-style: italic;
 }
@@ -210,6 +206,16 @@ footer {
   margin-top: 25px;
 }
 
+#homePage {
+  h3 {
+    font-size: 1.3rem;
+    margin: 25px 0 8px;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+}
+
 #giftPage {
   height: 100%;
   img {
@@ -235,6 +241,16 @@ footer {
 #giftsListPage {
   li {
     padding-bottom: 3px;
+  }
+  .yearLink {
+    color: white;
+    font-size: 2rem;
+    &:visited {
+      color: white;
+    }
+    &:hover {
+      color: black;
+    }
   }
 }
 
@@ -348,6 +364,9 @@ input:checked + .slider:before {
     padding: 10px 10px 35px;
   }
 
+  #homeLink {
+    display: none;
+  }
 
   ul {
     list-style-position: inside;
@@ -355,7 +374,6 @@ input:checked + .slider:before {
 
   menu {
     ul {
-      flex-flow: column wrap;
       max-height: 80px;
     }
   }
