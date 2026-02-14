@@ -26,6 +26,13 @@ permalink: "gift/{{ gift.id }}/index.html"
     </p>
   </div>
 
+  {# {% if gift.parent %}
+    <p>
+      <strong>Chain:</strong>
+      <a href="{{ '/gift/' + gift.parent | url }}">{{ (secretSanta.chainGifts | find("id", gift.parent)).name }}</a>
+    </p>
+  {% endif %} #}
+
   {# <p>If you have photos or more details on this gift, send them to me.</p> #}
 
   {% for img in gift.images %}
