@@ -293,6 +293,16 @@ footer {
   }
 }
 
+#nothing {
+  align-items: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  font-size: 2rem;
+  height: 100vh;
+  justify-content: center;
+}
+
 /* ============================================= */
 /* FANCY SWITCH */
 /* ============================================= */
