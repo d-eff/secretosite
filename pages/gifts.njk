@@ -4,7 +4,7 @@
   <div class="content">
     {% for year, items in secretSanta.gifts | groupby("year") %}
       <div class="content">
-        {{ year }}
+        <h2><a class="yearLink" href="{{ '/year/' + year | url }}">{{ year }}</a></h2>
         <ul>
         {% for gift in items %}
           <li>

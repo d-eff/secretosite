@@ -236,6 +236,16 @@ footer {
   li {
     padding-bottom: 3px;
   }
+  .yearLink {
+    color: white;
+    font-size: 2rem;
+    &:visited {
+      color: white;
+    }
+    &:hover {
+      color: black;
+    }
+  }
 }
 
 .playerStatus {
