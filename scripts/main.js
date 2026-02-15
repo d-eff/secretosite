@@ -1,4 +1,5 @@
 //TOGGLES
+//---------------------------------------------------
 const page = document.getElementById('pageContainer');
 const darkModeToggle = document.getElementById('darkMode');
 const adModeToggle = document.getElementById('adMode');
@@ -22,6 +23,7 @@ if(adModeToggle) {
 }
 
 //BANNERS
+//---------------------------------------------------
 const banners = [
   { src: "ape.png", alt: "Don't you want your coat to stay lush and shiny?"},
   { src: "bookchains.png", alt: "Buy bookchains now, before your books escape." },
@@ -53,3 +55,24 @@ leftBanner.title = banners[leftIndex].alt;
 rightBanner.src = `/imgs/ads/${banners[rightIndex].src}`;
 rightBanner.alt = banners[rightIndex].alt;
 rightBanner.title = banners[rightIndex].alt;
+
+//SECRETO FACTS
+//---------------------------------------------------
+const secretoFacts = [
+  "I think he just likes the spreadsheet parts.",
+  "Ancient civilizations revered him as a fell god.",
+  "He smells like old fish.",
+  "I didn't know anyone else could see him.",
+  "Some people say he eats the bad gifts.",
+  "DO NOT LOOK HIM IN THE EYES.",
+  "Be not afraid, he will not harm you.",
+  "He has a wife, apparently.",
+  "That's not face paint, I think he's very sick.",
+  "He calls everyone 'child,' because he's very old.",
+  "I think The Book is his? He had it in <a href=\"https://www.youtube.com/watch?v=XYVMWYVC9U8\" style=\"font-weight: normal;\">the movie.</a>",
+];
+
+const factEle = document.getElementById('secretoFact');
+if(factEle) {
+  factEle.innerHTML = secretoFacts[Math.floor(Math.random() * secretoFacts.length)]
+}
