@@ -1,3 +1,9 @@
+:root {
+  --secreto-red: #ff0000;
+  --secreto-red-dark: #9E0000;
+  --secreto-white: #F0EAD6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +15,7 @@ html, body {
 }
 
 body {
-  background-color: #ff0000;
+  background-color: var(--secreto-red);
   font-family: 'tahoma', sans-serif;
 }
 
@@ -19,11 +25,12 @@ a {
   text-decoration: none;
   color: black;
 }
-a:hover {
-  color: #ff0000;
-}
+
 a:visited {
-  color: #ff0000;
+  color: var(--secreto-red-dark);
+}
+a:hover {
+  color: var(--secreto-red);
 }
 
 #page404 {
@@ -90,7 +97,7 @@ menu {
   }
   a,
   a:visited {
-    color: #F0EAD6;
+    color: var(--secreto-white);
     font-size: 2rem;
     text-decoration: none;
   }
@@ -109,7 +116,7 @@ menu {
 }
 
 main {
-  background-color: #F0EAD6;
+  background-color: var(--secreto-white);
   border: 5px solid white;
   border-radius: 10px 10px;
   margin: 0 12px;
@@ -243,10 +250,10 @@ footer {
     padding-bottom: 3px;
   }
   .yearLink {
-    color: white;
+    color: var(--secreto-red);
     font-size: 2rem;
     &:visited {
-      color: white;
+      color: var(--secreto-red);
     }
     &:hover {
       color: black;
@@ -255,7 +262,7 @@ footer {
 }
 
 .playerStatus {
-  color: #ff0000;
+  color: var(--secreto-red);
 }
 
 #rulesPage {
