@@ -12,7 +12,7 @@ permalink: "year/{{ year.id }}/index.html"
 <div id="yearPage" class="page">
   <h1>{{ year.year }}</h1>
 
-  <h4 class="comment">{{ year.description }}</h4>
+  <h4 class="comment">{{ year.description | safe }}</h4>
 
   <div class="content">
     <h2>Players</h2>

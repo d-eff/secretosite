@@ -1,0 +1,59 @@
+---
+layout: false
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>oh hello</title>
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    <script src="/scripts/grid.js" defer></script>
+  </head>
+  <body>
+    <div id="gridPage">
+      {% set count = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] %}
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            {% for player in secretSanta.players %}
+            <th class="{{ player.status }}">{{ player.name }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for player in secretSanta.players %}
+          <tr>
+            <td class="{{ 'retired' if player.status === 'retired' }}">{{ player.name }}</td>
+            {% for idx in count %}
+              {% set toPlayer = secretSanta.players[idx] %}
+              {% set gifts = (secretSanta.gifts | filter("from", player.name) | filter("to", toPlayer.name))%}
+              <td class="
+                {{ 'self' if player.name === toPlayer.name }}
+                {{ 'retired' if (toPlayer.status === 'retired' or player.status === 'retired')}}
+                {{ 'gifted-' + gifts | length }}
+              ">
+              {# {{ gifts | length | dump }} #}
+              {% for gift in gifts%}
+                X
+              {% endfor %}
+              </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+     <div>
+      <span>Show Retired</span>
+      <label class="toggle">
+        <input id="retiredGrid" type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </body>
+</html>
+
+
+

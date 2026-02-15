@@ -12,26 +12,20 @@ module.exports = function (eleventyConfig) {
     return [...new Set(arr)];
   });
 
-  eleventyConfig.addFilter("sortNumeric", function (arr) {
-    return arr.slice().sort((a, b) => a - b);
-  });
+  eleventyConfig.addFilter("sortNumeric", (arr) => arr.slice().sort((a, b) => a - b));
 
   eleventyConfig.addFilter("map", (arr, prop) => {
     if (!Array.isArray(arr)) return arr;
     return arr.map(item => item[prop]);
   });
 
-  eleventyConfig.addFilter("filter", function (arr=[], key="", value) {
-    return arr?.filter(item => item[key] === value);
-  });
+  eleventyConfig.addFilter("filter", (arr=[], key="", value) => arr?.filter(item => item[key] === value));
 
   eleventyConfig.addFilter("find", function (arr=[], key="", value) {
     return arr?.find(item => item[key] === value);
   });
 
-  eleventyConfig.addFilter("capitalize", function (arr) {
-    return `${arr.charAt(0).toUpperCase()}${arr.slice(1, arr.length)}`;
-  });
+  eleventyConfig.addFilter("capitalize", (arr) => `${arr.charAt(0).toUpperCase()}${arr.slice(1, arr.length)}`);
 
    eleventyConfig.addCollection("photosByYear", () => {
     const dir = "imgs/gifts";

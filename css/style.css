@@ -303,17 +303,60 @@ footer {
   justify-content: center;
 }
 
+#gridPage {
+  table {
+    margin: 0 auto;
+  }
+  th {
+    /* min-width: 70px; */
+    height: 20px;
+    max-width: 75px;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    width: 75px;
+  }
+  td {
+    height: 25px;
+    background-color: white;
+    &.gifted-1 {
+      background-color: lightgreen;
+    }
+    &.gifted-2 {
+      background-color: green;
+    }
+    &.gifted-3 {
+      background-color: darkgreen;
+    }
+    &.retired {
+      background-color: yellow;
+    }
+    &.self {
+      background-color: gray;
+    }
+    &:hover {
+      background-color: green;
+    }
+  }
+  .retired {
+    display: none;
+  }
+  &.showRetired .retired {
+    display: table-cell;
+  }
+}
+
 /* ============================================= */
 /* FANCY SWITCH */
 /* ============================================= */
-.toggle-switch {
+.toggle {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 18px;
 }
 
-.toggle-switch input {
+.toggle input {
   opacity: 0;
   width: 0;
   height: 0;
