@@ -69,8 +69,9 @@ const secretoFacts = [
   "He has a wife, apparently.",
   "That's not face paint, I think he's very sick.",
   "He calls everyone 'child,' because he's very old.",
-  "I think The Book is his? He had it in <a href=\"https://www.youtube.com/watch?v=XYVMWYVC9U8\" style=\"font-weight: normal;\">the movie.</a>",
+  "Think of him as a... hostile mascot."
 ];
+// "I think The Book is his? He had it in <a href=\"https://www.youtube.com/watch?v=XYVMWYVC9U8\" style=\"font-weight: normal;\">the movie.</a>",
 
 const factEle = document.getElementById('secretoFact');
 if(factEle) {
