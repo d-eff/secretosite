@@ -409,7 +409,7 @@ input:checked + .slider:before {
     display: none;
   }
   main {
-    min-height: none;
+    min-height: unset;
   }
 }
 
