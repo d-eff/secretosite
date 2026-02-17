@@ -17,7 +17,7 @@
             <source media="(width >= 1024px)" srcset="{{ '/imgs/secreto_logo_horiz_lg.webp' | url }}">
             <source media="(width >= 750px)" srcset="{{ '/imgs/secreto_logo_horiz_med.webp' | url }}">
             <source media="(width < 550px)" srcset="{{ '/imgs/secreto_logo_horiz_sm.webp' | url }}">
-            <img src="{{ '/imgs/secreto_logo_horiz_lg.webp' | url }}" alt="shitty secret santa logo" id="logo" />
+            <img fetchpriority="high" src="{{ '/imgs/secreto_logo_horiz_lg.webp' | url }}" alt="shitty secret santa logo" id="logo" />
           </picture>
         </a>
         <menu>
@@ -31,11 +31,11 @@
       </header>
 
       <div class="mainRow">
-        <div class="bannerContainer"><img src="" alt=""  id="leftBanner"/></div>
+        <div class="bannerContainer"><img src="" alt="" id="leftBanner" class="banner"/></div>
         <main>
         {{ content | safe }}
         </main>
-        <div class="bannerContainer"><img src="" alt=""  id="rightBanner"/></div>
+        <div class="bannerContainer"><img src="" alt="" id="rightBanner" class="banner"/></div>
       </div>
 
       <footer>

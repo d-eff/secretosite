@@ -127,6 +127,8 @@ main {
 
 .bannerContainer {
   margin-top: 5px;
+}
+.banner {
   height: 600px;
   width: 160px;
 }
