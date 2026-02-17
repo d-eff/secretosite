@@ -127,6 +127,8 @@ main {
 
 .bannerContainer {
   margin-top: 5px;
+}
+.banner {
   height: 600px;
   width: 160px;
 }
@@ -409,7 +411,7 @@ input:checked + .slider:before {
     display: none;
   }
   main {
-    min-height: none;
+    min-height: unset;
   }
 }
 

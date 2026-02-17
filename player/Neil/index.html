@@ -11,7 +11,15 @@
   <body>
     <div id="pageContainer">
       <header>
-        <a href="/"><img src="/imgs/secreto_logo_horiz_lg.png" alt="shitty secret santa logo" id="logo" /></a>
+        <a href="/">
+          
+          <picture>
+            <source media="(width >= 1024px)" srcset="/imgs/secreto_logo_horiz_lg.webp">
+            <source media="(width >= 750px)" srcset="/imgs/secreto_logo_horiz_med.webp">
+            <source media="(width < 550px)" srcset="/imgs/secreto_logo_horiz_sm.webp">
+            <img fetchpriority="high" src="/imgs/secreto_logo_horiz_lg.webp" alt="shitty secret santa logo" id="logo" />
+          </picture>
+        </a>
         <menu>
           <ul>
             <li id="homeLink"><a class="" href="/"><strong>HOME</strong></a></li>
@@ -23,7 +31,7 @@
       </header>
 
       <div class="mainRow">
-        <div class="bannerContainer"><img src="" alt=""  id="leftBanner"/></div>
+        <div class="bannerContainer"><img src="" alt="" id="leftBanner" class="banner"/></div>
         <main>
         
 
@@ -294,7 +302,7 @@
   </div>
 </div>
         </main>
-        <div class="bannerContainer"><img src="" alt=""  id="rightBanner"/></div>
+        <div class="bannerContainer"><img src="" alt="" id="rightBanner" class="banner"/></div>
       </div>
 
       <footer>
