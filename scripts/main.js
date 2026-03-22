@@ -4,6 +4,12 @@ const page = document.getElementById('pageContainer');
 const darkModeToggle = document.getElementById('darkMode');
 const adModeToggle = document.getElementById('adMode');
 
+const adModeStorage = sessionStorage.getItem('secretoAdMode') ?? "enabled";
+if(adModeStorage === "disabled") {
+  page.classList.add('disableAds');
+  adModeToggle.checked = false;
+}
+
 darkModeToggle.addEventListener('change', (e) => {
   if(e.target.checked) {
     page.classList.add('darkMode');
@@ -15,12 +21,16 @@ darkModeToggle.addEventListener('change', (e) => {
 if(adModeToggle) {
   adModeToggle.addEventListener('change', (e) => {
     if(e.target.checked) {
+      sessionStorage.setItem('secretoAdMode', "enabled");
       page.classList.remove('disableAds');
     } else {
+      sessionStorage.setItem('secretoAdMode', "disabled");
       page.classList.add('disableAds');
     }
   });
 }
+
+
 
 //BANNERS
 //---------------------------------------------------
